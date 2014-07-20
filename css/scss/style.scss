@@ -59,6 +59,7 @@ header {
 		@include font-size(30px);
 		text-align: center;
 		color: $color-1;
+        line-height: 1.6;
 	}
 
 	p {text-align:center;padding-top: 20px;}

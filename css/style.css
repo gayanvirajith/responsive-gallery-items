@@ -43,7 +43,8 @@ header {
     font-size: 30px;
     font-size: 1.875rem;
     text-align: center;
-    color: #2d313f; }
+    color: #2d313f;
+    line-height: 1.6; }
   header p {
     text-align: center;
     padding-top: 20px; }
