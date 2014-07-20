@@ -1,0 +1,174 @@
+@import 'bourbon/bourbon'; // http://bourbon.io/
+
+@import '../partials/variables'; // colors, fonts etc...
+
+@import '../partials/mixins'; // custom mixins
+
+@import '../partials/layout'; // responsive grid and media queries
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+	@include box-sizing(border-box);
+}
+
+body {
+	font: {
+		size: 100%;
+		family: $primary-font; // variables inside partials > _variables.scss
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* --------------------------------
+
+Modules - resusable container thanks to codyhouse.co
+
+-------------------------------- */
+.wc-container {
+	width: 90%;
+    max-width: $L; // breakpoints inside partials > _layout.scss
+    margin: 0 auto;
+
+    &::after { /* clearfix */
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+header {
+	padding: 40px;
+	h1 { 
+		@include font-size(30px);
+		text-align: center;
+		color: $color-1;
+	}
+
+	p {text-align:center;padding-top: 20px;}
+	a {
+		background-color: $color-white;
+		color: $color-1;
+		border: 1px solid rgba($color-1, .9);
+		display: inline-block;
+		position: relative;
+		font-size: 14px;
+		padding: .6em;
+		border-radius: 0.25em;
+		@include transition(all, 0.2s);
+		&:hover, &:focus, &:active {
+			background-color: $color-1;
+			color: $color-white;
+
+			.cd-nugget-info-arrow {
+				fill: $color-white;
+			}
+		}
+	}
+	a > span {
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+/* --------------------------------
+
+Modules - resusable part of gallery items
+
+-------------------------------- */
+.wc-gallery-container {
+	width: 90%;
+    max-width: $L; // breakpoints inside partials > _layout.scss
+    margin: 0 auto;
+    padding-top: 20px; // just for the demo 
+
+    &::after { /* clearfix */
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    article {
+    	margin-bottom: 1.5em;
+    	box-shadow: 0 1px 1px rgba($color-black, .2);
+        img {
+            width: 100%;
+            display: block;
+            -webkit-border-radius: .25em .25em 0 0;
+			border-radius: .25em .25em 0 0;
+			@include transition(opacity, 0.2s);
+        }   
+
+        footer {
+        	background-color: $color-2;
+        	color: $color-1;
+        	padding: 20px;        	
+        	-webkit-border-radius: 0 0 .25em .25em ;
+			border-radius: 0 0 .25em .25em;
+        }
+
+        a { 
+        	color: $color-1;
+        	@include transition(all, 0.2s);
+        	&:hover, &:focus, &:active {
+        		opacity: .8;
+        		img {
+        			opacity: .9;
+        		}
+        	} 
+        }
+
+        footer h3 { 
+        	@include font-size(14px); 
+        	padding-bottom: 10px;
+        	font-weight: 600;
+        }
+        footer p { 
+        	@include font-size(13px); 
+        }
+    }	
+
+    @include MQ(M) {
+        article {
+            @include column(.48); // see how this mixin works inside partials > _layout.scss
+            margin-bottom: 2em;
+            margin-right: 4%;
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @include MQ(L) {
+        article {
+            @include column(.31);
+            margin-bottom: 2.5em;
+            margin-right: 3.5%;
+
+            &:nth-child(2n) {
+                margin-right: 3.5%;
+            }
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+    }
+}

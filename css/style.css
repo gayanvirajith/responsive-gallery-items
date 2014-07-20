@@ -1,0 +1,137 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 100%;
+  font-family: "Open sans", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+img {
+  max-width: 100%; }
+
+/* --------------------------------
+
+Modules - resusable container thanks to codyhouse.co
+
+-------------------------------- */
+.wc-container {
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto; }
+  .wc-container::after {
+    /* clearfix */
+    content: '';
+    display: table;
+    clear: both; }
+
+header {
+  padding: 40px; }
+  header h1 {
+    font-size: 30px;
+    font-size: 1.875rem;
+    text-align: center;
+    color: #2d313f; }
+  header p {
+    text-align: center;
+    padding-top: 20px; }
+  header a {
+    background-color: white;
+    color: #2d313f;
+    border: 1px solid rgba(45, 49, 63, 0.9);
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    padding: .6em;
+    border-radius: 0.25em;
+    -webkit-transition: all, 0.2s;
+    -moz-transition: all, 0.2s;
+    transition: all, 0.2s; }
+    header a:hover, header a:focus, header a:active {
+      background-color: #2d313f;
+      color: white; }
+      header a:hover .cd-nugget-info-arrow, header a:focus .cd-nugget-info-arrow, header a:active .cd-nugget-info-arrow {
+        fill: white; }
+  header a > span {
+    vertical-align: middle;
+    display: inline-block; }
+
+/* --------------------------------
+
+Modules - resusable part of gallery items
+
+-------------------------------- */
+.wc-gallery-container {
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-top: 20px; }
+  .wc-gallery-container::after {
+    /* clearfix */
+    content: '';
+    display: table;
+    clear: both; }
+  .wc-gallery-container article {
+    margin-bottom: 1.5em;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
+    .wc-gallery-container article img {
+      width: 100%;
+      display: block;
+      -webkit-border-radius: .25em .25em 0 0;
+      border-radius: .25em .25em 0 0;
+      -webkit-transition: opacity, 0.2s;
+      -moz-transition: opacity, 0.2s;
+      transition: opacity, 0.2s; }
+    .wc-gallery-container article footer {
+      background-color: #f4f4f4;
+      color: #2d313f;
+      padding: 20px;
+      -webkit-border-radius: 0 0 0.25em 0.25em;
+      border-radius: 0 0 .25em .25em; }
+    .wc-gallery-container article a {
+      color: #2d313f;
+      -webkit-transition: all, 0.2s;
+      -moz-transition: all, 0.2s;
+      transition: all, 0.2s; }
+      .wc-gallery-container article a:hover, .wc-gallery-container article a:focus, .wc-gallery-container article a:active {
+        opacity: .8; }
+        .wc-gallery-container article a:hover img, .wc-gallery-container article a:focus img, .wc-gallery-container article a:active img {
+          opacity: .9; }
+    .wc-gallery-container article footer h3 {
+      font-size: 14px;
+      font-size: 0.875rem;
+      padding-bottom: 10px;
+      font-weight: 600; }
+    .wc-gallery-container article footer p {
+      font-size: 13px;
+      font-size: 0.8125rem; }
+  @media only screen and (min-width: 768px) {
+    .wc-gallery-container article {
+      width: 48%;
+      float: left;
+      margin-bottom: 2em;
+      margin-right: 4%; }
+      .wc-gallery-container article:nth-child(2n) {
+        margin-right: 0; } }
+  @media only screen and (min-width: 1170px) {
+    .wc-gallery-container article {
+      width: 31%;
+      float: left;
+      margin-bottom: 2.5em;
+      margin-right: 3.5%; }
+      .wc-gallery-container article:nth-child(2n) {
+        margin-right: 3.5%; }
+      .wc-gallery-container article:nth-child(3n) {
+        margin-right: 0; } }
