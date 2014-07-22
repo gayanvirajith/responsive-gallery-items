@@ -57,14 +57,20 @@ header {
     font-size: 14px;
     padding: .6em;
     border-radius: 0.25em;
-    -webkit-transition: all, 0.2s;
-    -moz-transition: all, 0.2s;
-    transition: all, 0.2s; }
+    -webkit-transition: background, 0.2s;
+    -moz-transition: background, 0.2s;
+    transition: background, 0.2s; }
     header a:hover, header a:focus, header a:active {
       background-color: #2d313f;
       color: white; }
       header a:hover .cd-nugget-info-arrow, header a:focus .cd-nugget-info-arrow, header a:active .cd-nugget-info-arrow {
         fill: white; }
+    header a:active {
+      -webkit-transform: translateY(1px);
+      -moz-transform: translateY(1px);
+      -ms-transform: translateY(1px);
+      -o-transform: translateY(1px);
+      transform: translateY(1px); }
   header a > span {
     vertical-align: middle;
     display: inline-block; }

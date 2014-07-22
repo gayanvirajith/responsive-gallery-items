@@ -72,7 +72,7 @@ header {
 		font-size: 14px;
 		padding: .6em;
 		border-radius: 0.25em;
-		@include transition(all, 0.2s);
+		@include transition(background, 0.2s);
 		&:hover, &:focus, &:active {
 			background-color: $color-1;
 			color: $color-white;
@@ -81,6 +81,9 @@ header {
 				fill: $color-white;
 			}
 		}
+        &:active {
+            @include transform(translateY(1px));
+        }
 	}
 	a > span {
 		vertical-align: middle;
